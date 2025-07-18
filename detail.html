@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title id="detailPageTitle">Detail Lowongan</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        padding-top: 56px;
+        background-color: #f4f4f4;
+      }
+
+      .card-img-top-detail { /* Class for the main image on detail page */
+        max-height: 400px; /* Adjust height as needed */
+        object-fit: cover;
+        width: 100%;
+      }
+
+      .card-img-top { /* Existing class for similar jobs */
+        max-height: 200px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Lowongan Kerja</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">Tentang Kami</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <nav aria-label="breadcrumb" class="mt-5">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Detail</li>
+          <li class="breadcrumb-item active" aria-current="page" id="breadcrumbJobTitle">
+            </li>
+        </ol>
+      </nav>
+
+      <div class="row justify-content-center my-5">
+        <div class="col-lg-8">
+          <div class="card shadow-sm">
+            <img
+              src=""
+              class="card-img-top-detail"
+              alt="Job Image"
+              id="jobDetailImage"
+            />
+            <div class="card-body">
+              <h5 class="card-title" id="jobDetailTitle">Card title</h5>
+              <p class="card-text my-3" id="jobDetailDescription">
+                "Deskripsi lowongan akan muncul di sini."
+              </p>
+              <p class="text-muted" id="jobCompanyLocation">Lokasi perusahaan akan muncul di sini.</p>
+              <a href="#" class="btn mt-3 btn-dark d-block" id="applyButton">Apply</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h3 class="text-center" style="margin-top: 170px">
+        Pekerjaan Yang Serupa
+      </h3>
+      <div class="row my-5" id="relatedJobsContainer">
+        <div class="col-lg-4 mb-5">
+            <div class="card">
+                <img src="https://static.vecteezy.com/system/resources/previews/026/914/992/large_2x/chef-cooking-in-a-busy-restaurant-kitchen-back-view-generative-ai-photo.jpg">
+                <div class="card-body">
+                    <h5 class="card-title mb-4 mt-3">Kitchen</h5>
+                    <a href="detail.html?job=Kitchen" class="btn btn-success d-block">Detail</a>
+                    <a href="data-diri.html?job=kitchen" class="btn mt-3 btn-dark d-block">Apply</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-5">
+            <div class="card">
+                <img src="https://www.ecsurfaces.com/wp-content/uploads/2019/03/VA-Resturant-Matallic-Epoxy-Floor-e1552418416686.jpg" class="card-img-top" alt="Expert CSS Job Image">
+                <div class="card-body">
+                    <h5 class="card-title mb-4 mt-3">Floor</h5>
+                    <a href="detail.html?job=Floor" class="btn btn-success d-block">Detail</a>
+                    <a href="data-diri.html?job=Floor" class="btn mt-3 btn-dark d-block">Apply</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-5">
+            <div class="card">
+                <img src="https://fthmb.tqn.com/yIJmxh2ugPYiPIC2Ub45y1k1iKA=/3870x2575/filters:fill(auto,1)/chef-56a0f2485f9b58eba4b571f5.jpg" alt="Expert JavaScript Job Image">
+                <div class="card-body">
+                    <h5 class="card-title mb-4 mt-3">Chef</h5>
+                    <a href="detail.html?job=Chef" class="btn btn-success d-block">Detail</a>
+                    <a href="data-diri.html?job=Chef" class="btn mt-3 btn-dark d-block">Apply</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-5">
+            <div class="card">
+                <img src="https://thepinoyofw.com/wp-content/uploads/2023/03/apply-as-domestic-helper-cyprus.jpg" class="card-img-top" alt="Expert Backend Developer Job Image">
+                <div class="card-body">
+                    <h5 class="card-title mb-4 mt-3">Helper</h5>
+                    <a href="detail.html?job=Helper" class="btn btn-success d-block">Detail</a>
+                    <a href="data-diri.html?job=Helper" class="btn mt-3 btn-dark d-block">Apply</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-5">
+            <div class="card">
+                <img src="https://newsd.co/wp-content/uploads/2018/11/waiters-day-2.jpg" class="card-img-top" alt="Expert Frontend Developer Job Image">
+                <div class="card-body">
+                    <h5 class="card-title mb-4 mt-3">Waiter</h5>
+                    <a href="detail.html?job=Waiter" class="btn btn-success d-block">Detail</a>
+                    <a href="data-diri.html?job=Waiter" class="btn mt-3 btn-dark d-block">Apply</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-5">
+            <div class="card">
+                <img src="https://scrubnbubbles.com/wp-content/uploads/2022/05/cleaning-service.jpeg" class="card-img-top" alt="Expert Designer Job Image">
+                <div class="card-body">
+                    <h5 class="card-title mb-4 mt-3">Cleaning Service</h5>
+                    <a href="detail.html?job=Cleaning Service" class="btn btn-success d-block">Detail</a>
+                    <a href="data-diri.html?job=Cleaning Service" class="btn mt-3 btn-dark d-block">Apply</a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      // Data lowongan pekerjaan dengan URL gambar unik untuk setiap pekerjaan
+      const jobData = {
+        "Kitchen": {
+          image: "https://static.vecteezy.com/system/resources/previews/026/914/992/large_2x/chef-cooking-in-a-busy-restaurant-kitchen-back-view-generative-ai-photo.jpg",
+          title: "Kitchen",
+          description: "Mencari peluang kerja sebagai staf kitchen di restoran profesional. Memiliki pengalaman minimal 3 tahun dalam mengolah dan menyiapkan makanan dengan standar kebersihan dan kualitas tinggi. Terampil dalam bekerja di lingkungan dapur yang cepat, mampu bekerja dalam tim, dan menjaga konsistensi rasa serta presentasi hidangan. Siap bergabung dengan tim yang berdedikasi untuk menyajikan makanan terbaik kepada pelanggan!",
+        },
+        "Floor": {
+          image: "https://www.ecsurfaces.com/wp-content/uploads/2019/03/VA-Resturant-Matallic-Epoxy-Floor-e1552418416686.jpg",
+          title: "Floor",
+          description: "Sedang mencari peluang kerja di bidang floor restoran sebagai staf pelayanan. Memiliki pengalaman minimal 3 tahun dalam melayani pelanggan dengan ramah, profesional, dan cepat. Terampil dalam menangani pesanan, menyajikan makanan, serta memastikan kenyamanan dan kepuasan tamu. Siap bekerja dalam tim dan menjaga standar layanan yang tinggi. Antusias untuk bergabung dengan tim yang berkomitmen memberikan pengalaman makan terbaik kepada setiap pelanggan!",
+        },
+        "Chef": {
+          image: "https://fthmb.tqn.com/yIJmxh2ugPYiPIC2Ub45y1k1iKA=/3870x2575/filters:fill(auto,1)/chef-56a0f2485f9b58eba4b571f5.jpg",
+          title: "Chef",
+          description: "Sedang mencari peluang kerja sebagai Chef profesional dengan pengalaman lebih dari 3 tahun di dapur restoran. Terampil dalam merancang menu, mengatur operasional dapur, serta memastikan kualitas rasa dan presentasi makanan. Berpengalaman memimpin tim dapur, menjaga kebersihan dan standar keamanan pangan, serta mampu bekerja di bawah tekanan dengan efisiensi tinggi. Siap memberikan kontribusi terbaik dalam menciptakan hidangan yang lezat dan memuaskan bagi pelanggan.",
+        },
+        "Helper": {
+            image: "https://thepinoyofw.com/wp-content/uploads/2023/03/apply-as-domestic-helper-cyprus.jpg",
+            title: "Helper",
+            description: "Sedang mencari peluang kerja sebagai Kitchen Helper dengan pengalaman kerja lebih dari 3 tahun di lingkungan dapur restoran. Terbiasa membantu chef dalam persiapan bahan, menjaga kebersihan area kerja, mencuci peralatan dapur, serta memastikan semua kebutuhan dapur terpenuhi tepat waktu. Disiplin, cekatan, dan mampu bekerja sama dalam tim dengan baik. Siap mendukung kelancaran operasional dapur dan menjaga standar kebersihan serta kerapihan.",
+        },
+        "Waiter": {
+            image: "https://newsd.co/wp-content/uploads/2018/11/waiters-day-2.jpg",
+            title: "Waiter",
+            description: "Sedang mencari peluang kerja sebagai Waiter dengan pengalaman lebih dari 3 tahun di industri restoran. Terampil dalam melayani tamu dengan ramah dan profesional, mencatat dan menyajikan pesanan dengan tepat, serta memastikan kepuasan pelanggan selama berada di restoran. Memiliki kemampuan komunikasi yang baik, berpenampilan rapi, dan mampu bekerja dalam tim maupun individu. Siap memberikan layanan terbaik dan menciptakan suasana makan yang menyenangkan bagi setiap tamu",
+        },
+        "Cleaning Service": {
+            image: "https://scrubnbubbles.com/wp-content/uploads/2022/05/cleaning-service.jpeg",
+            title: "Cleaning Service",
+            description: "Sedang mencari peluang kerja sebagai Cleaning Service dengan pengalaman lebih dari 3 tahun dalam menjaga kebersihan dan kerapihan area kerja, baik di lingkungan restoran, kantor, maupun fasilitas umum. Terampil dalam menggunakan alat-alat kebersihan, memahami prosedur pembersihan yang aman dan efisien, serta menjaga standar sanitasi yang tinggi. Disiplin, teliti, dan bertanggung jawab dalam menjalankan tugas. Siap memberikan lingkungan kerja yang bersih, nyaman, dan mendukung produktivitas",
+        },
+
+      };
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const jobTitleParam = urlParams.get("job");
+
+        const jobDetail = jobData[jobTitleParam];
+
+        if (jobDetail) {
+          document.getElementById("detailPageTitle").textContent = `Detail - ${jobDetail.title}`;
+          document.getElementById("breadcrumbJobTitle").textContent = jobDetail.title;
+          document.getElementById("jobDetailImage").src = jobDetail.image; // Ini baris penting yang mengubah gambar
+          document.getElementById("jobDetailImage").alt = `Gambar untuk ${jobDetail.title}`;
+          document.getElementById("jobDetailTitle").textContent = jobDetail.title;
+          document.getElementById("jobDetailDescription").textContent = jobDetail.description;
+          document.getElementById("jobCompanyLocation").textContent = jobDetail.companyLocation;
+          document.getElementById("applyButton").href = `data-diri.html?job=${encodeURIComponent(jobDetail.title)}`;
+        } else {
+          // Fallback if job is not found
+          document.getElementById("detailPageTitle").textContent = "Lowongan Tidak Ditemukan";
+          document.getElementById("breadcrumbJobTitle").textContent = "Tidak Ditemukan";
+          document.querySelector(".card").innerHTML = `
+            <div class="card-body">
+              <h2 class="text-center text-danger">Lowongan Tidak Ditemukan!</h2>
+              <p class="text-center">Maaf, detail lowongan yang Anda cari tidak ada atau tidak valid.</p>
+              <div class="d-grid gap-2 mt-4">
+                <a href="home.html" class="btn btn-primary btn-lg">Kembali ke Beranda</a>
+              </div>
+            </div>
+          `;
+          document.querySelector("h3").style.display = "none";
+          document.getElementById("relatedJobsContainer").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

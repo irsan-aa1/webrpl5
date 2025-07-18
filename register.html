@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register New Account</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/083700e51f.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Tambahan CSS khusus untuk register.html jika ada perbedaan styling */
+      /* Contoh: mengatur warna tombol yang berbeda */
+      .login-box h1 {
+        margin-bottom: 25px; /* Sesuaikan jika perlu */
+      }
+      .login-box input[type="submit"].register-btn {
+        background: linear-gradient(120deg, #2ecc71, #27ae60); /* Warna hijau untuk register */
+      }
+      .login-box input[type="submit"].register-btn:hover {
+        background: linear-gradient(120deg, #27ae60, #2ecc71);
+      }
+      .back-link {
+          text-decoration: none;
+          color: #bdc3c7; /* Warna teks yang cocok dengan tema Anda */
+          font-size: 0.9em;
+          margin-top: 15px;
+          display: block; /* Agar bisa diatur margin-top */
+      }
+      .back-link:hover {
+          text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="login-box">
+        <form id="registerForm" action="#">
+          <div class="logo">
+            <img src="gebu.png" alt="logo" />
+          </div>
+          <h1>create account</h1>
+          <div class="form-grp">
+            <input type="text" name="newUsername" id="newUsername" placeholder="new username" required />
+            <i class="fa fa-user"></i>
+          </div>
+          <div class="form-grp">
+            <input type="password" name="newPassword" id="newPassword" placeholder="new password" required />
+            <i class="fa fa-lock"></i>
+          </div>
+          <div class="form-grp">
+            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="confirm password" required />
+            <i class="fa fa-lock"></i>
+          </div>
+
+          <div class="form-grp">
+            <input type="submit" value="register" class="register-btn" />
+          </div>
+
+          <div class="form-grp">
+            <a href="login.html" class="back-link">back to login</a>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script>
+      const registerForm = document.getElementById('registerForm');
+
+      registerForm.addEventListener('submit', function (event) {
+        event.preventDefault(); // Mencegah form untuk submit secara default
+
+        const newUsername = document.getElementById('newUsername').value;
+        const newPassword = document.getElementById('newPassword').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (newPassword !== confirmPassword) {
+          alert('Password dan konfirmasi password tidak cocok!');
+          return;
+        }
+
+        // --- Simulasi Pendaftaran Akun ---
+        // Di sini adalah tempat Anda biasanya mengirim data ke server (backend)
+        // untuk disimpan di database.
+        // Untuk tujuan demo ini, kita hanya akan menggunakan localStorage
+        // Sebagai CATATAN: Ini BUKAN cara aman untuk menyimpan kredensial di aplikasi nyata!
+        // Ini hanya untuk DEMO FRONTEND.
+
+        // Membuat objek akun baru
+        const newUser = {
+            username: newUsername,
+            password: newPassword // Ingat: JANGAN PERNAH simpan password plaintext di produksi!
+        };
+
+        // Mendapatkan akun yang sudah ada dari localStorage (jika ada)
+        let accounts = JSON.parse(localStorage.getItem('userAccounts')) || [];
+
+        // Cek apakah username sudah ada
+        const userExists = accounts.some(account => account.username === newUsername);
+        if (userExists) {
+            alert('Username ini sudah terdaftar. Silakan pilih username lain.');
+            return;
+        }
+
+        // Tambahkan akun baru
+        accounts.push(newUser);
+        // Simpan kembali ke localStorage
+        localStorage.setItem('userAccounts', JSON.stringify(accounts));
+
+        alert(`Akun baru untuk "${newUsername}" berhasil dibuat! Silakan login.`);
+        // Arahkan kembali ke halaman login setelah registrasi berhasil
+        window.location.href = 'index.html';
+      });
+    </script>
+  </body>
+</html>

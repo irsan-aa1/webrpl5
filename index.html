@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/083700e51f.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a href="admin-login.html" class="admin-link">Admin</a>
+    <section>
+      <div class="login-box">
+        <div id="resetModal" class="modal"></div>
+
+        <form id="loginForm" action="#">
+          <div class="logo">
+            <img src="gebu.png" alt="logo" />
+          </div>
+          <h1>login</h1>
+          <div class="form-grp">
+            <input type="text" name="username" id="username" placeholder="username" />
+            <i class="fa fa-user"></i>
+          </div>
+          <div class="form-grp">
+            <input type="password" name="password" id="password" placeholder="password" />
+            <i class="fa fa-lock"></i>
+          </div>
+
+          <div class="form-grp">
+            <input type="checkbox" name="remember" id="remember-me" />
+            <label for="remember-me">remember me</label>
+          </div>
+
+          <div class="form-grp">
+            <input type="submit" value="login" />
+          </div>
+
+          <div class="form-grp">
+            <a href="register.html">new account</a>
+          </div>
+        </form>
+      </div>
+    </section>
+
+   <script>
+      // Dapatkan referensi ke form login
+      const loginForm = document.getElementById('loginForm');
+
+      // Tambahkan event listener untuk submit form
+      loginForm.addEventListener('submit', function (event) {
+        // Mencegah perilaku default form (reload halaman)
+        event.preventDefault();
+
+        // Dapatkan username dan password yang dimasukkan pengguna
+        const enteredUsername = document.getElementById('username').value;
+        const enteredPassword = document.getElementById('password').value;
+
+        // Ambil data akun dari localStorage
+        // Pastikan key 'userAccounts' sama dengan yang digunakan di register.html
+        const storedAccounts = JSON.parse(localStorage.getItem('userAccounts')) || [];
+
+        let isAuthenticated = false;
+
+        // Iterasi melalui akun yang tersimpan untuk mencocokkan
+        for (let i = 0; i < storedAccounts.length; i++) {
+            const account = storedAccounts[i];
+            if (enteredUsername === account.username && enteredPassword === account.password) {
+                isAuthenticated = true;
+                break; // Hentikan loop jika ditemukan kecocokan
+            }
+        }
+
+        if (isAuthenticated) {
+          // Jika login berhasil, arahkan ke index.html
+          alert('Login berhasil!'); // Opsional: Beri tahu pengguna
+          window.location.href = 'home.html';
+        } else {
+          // Jika login gagal, tampilkan pesan kesalahan
+          alert('Username atau password salah!');
+        }
+      });
+    </script>
+  </body>
+</html>
